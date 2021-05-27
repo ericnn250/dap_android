@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">dap</string>
+    <string name="app_display_name">DIGITAL AMBASSADORS PROGRAM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Fragment Tags -->
+    <string name="tag_fragment_home">Home</string>
+    <string name="tag_fragment_trainees">Trainees</string>
+    <string name="tag_fragment_curriculum">Curriculum</string>
+    <string name="tag_fragment_sap">SAP</string>
+    <string name="tag_fragment_messages">Messaging</string>
+
+    <string-array name="centers">
+        <item>All Centers</item>
+        <item>KIGARAMA</item>
+        <item>MURAMA</item>
+        <item>KIBIRIZI</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>Week</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

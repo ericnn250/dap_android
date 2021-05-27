@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/system_color2"
+    tools:context=".fragments.HomeFragment">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/system_color2"
+        android:minHeight="80dp"
+        android:theme="?attr/actionBarTheme">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overview"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/system_color"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                >
+            <RelativeLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/not_logo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/notifications"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99+"
+                    android:layout_alignRight="@+id/not_logo"
+                    android:textSize="10dp"
+                    android:background="@color/red1"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circle"/>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:id="@+id/scrollableHome"
+        android:layout_below="@+id/toolbar_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+   <RelativeLayout
+       android:id="@+id/citizens_trained_graph"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="20dp"
+       android:elevation="5dp"
+       android:layout_marginRight="20dp"
+       android:padding="10dp"
+       android:background="@drawable/curve"
+       android:layout_height="wrap_content">
+       <TextView
+           android:id="@+id/trained_g_title"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Citizens Trained"
+           android:textSize="20sp"
+           android:textStyle="bold"/>
+       <LinearLayout
+           android:id="@+id/trained_select"
+           android:layout_below="@+id/trained_g_title"
+           android:layout_width="wrap_content"
+           android:layout_marginTop="5dp"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginRight="5dp"
+           android:layout_alignParentRight="true">
+           <Spinner
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/curved_grey_border"
+               android:id="@+id/spiner_allcenter"/>
+           <Spinner
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/curved_grey_border"
+               android:id="@+id/spiner_weesks"/>
+
+       </LinearLayout>
+       <com.github.mikephil.charting.charts.LineChart
+           android:id="@+id/chart1"
+           android:layout_width="match_parent"
+           android:layout_height="300dp"
+           android:layout_below="@+id/trained_select" />
+
+
+
+   </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/next_sessionview"
+        android:layout_below="@+id/citizens_trained_graph"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="5dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:background="@drawable/curve">
+        <TextView
+            android:id="@+id/next_session_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Next Session"/>
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit_icon"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/next_session_title">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date:"/>
+                <TextView
+                    android:id="@+id/nex_session_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="April 23, 2020"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time:"/>
+                <TextView
+                    android:id="@+id/nex_session_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="10:00 AM"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Group:"/>
+                <TextView
+                    android:id="@+id/nex_session_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="March 2021 Cohort Group 2"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Center:"/>
+                <TextView
+                    android:id="@+id/nex_session_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Club RAFIKI"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/training_centerview"
+        android:layout_below="@+id/next_sessionview"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="5dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:background="@drawable/curve">
+        <TextView
+            android:id="@+id/training_center_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Training Centers"/>
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_icon"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:id="@+id/centersList_title"
+            android:layout_below="@+id/training_center_title">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:baselineAligned="false"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/center_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:text="Center Name"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:text="Location"/>
+            </RelativeLayout>
+        </LinearLayout>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/centersList_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/traingcenter_list"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/trainee_analytics_view"
+        android:layout_below="@+id/training_centerview"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="5dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:background="@drawable/curve">
+        <TextView
+            android:id="@+id/trainee_analytics_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Trainees Analytics"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/trainee_analytics_title"
+            android:layout_alignParentRight="true"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/curved_grey_border"
+                android:orientation="horizontal"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Week"
+                    android:padding="5dp"
+                    android:layout_toLeftOf="@+id/week_dropdown"/>
+                <ImageView
+                    android:id="@+id/week_dropdown"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_down"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/analyticsbygendertitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trainee_analytics_title"
+            android:padding="10dp"
+            android:text="By Gender"/>
+        <RelativeLayout
+            android:layout_below="@+id/analyticsbygendertitle"
+            android:layout_width="match_parent"
+            android:id="@+id/bygenderchart"
+            android:layout_height="300dp">
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/piechart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/byagetitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bygenderchart"
+            android:padding="10dp"
+            android:text="By Age"/>
+
+            <FrameLayout
+                android:id="@+id/parentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@+id/byagetitle"
+                android:orientation="vertical" />
+
+
+    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
